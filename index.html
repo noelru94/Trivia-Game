@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title> Trivia Game </title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Trivia Game</h1>
+            <p class="lead">This is a simple trivia game. See how many questions you can guess correctly.</p>
+            <hr class="my-4">
+            <p>You have 15 seconds to for each question. Good luck!</p>
+            <p class="lead">
+              <a id="start" class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+            </p>
+        </div>
+
+        <div id="trivia" style="display: none">
+            <div id="question"><p>  </p></div>
+            <div id="question-time">15</div>
+            <div id="choices">
+                <div class="choice" id="A"></div>
+                <div class="choice" id="B"></div>
+                <div class="choice" id="C"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
