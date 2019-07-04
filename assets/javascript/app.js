@@ -28,7 +28,7 @@ var runningQuestionIndex = 0;
 var count = 15;
 
 
-function renderQuestion(){
+function questionRender(){
     var q = questions[runningQuestionIndex];
     $('#question').html('<p>'+q.question+'</p>');
     $('#A').html(q.choiceA);
@@ -36,13 +36,31 @@ function renderQuestion(){
     $('#C').html(q.choiceC);
 }
 
+function counterRender(){
+    if( count != 0 ){
+        $('#question-time').html("Time remaining: " + count);
+        count--;
+    }else{
+        count = 15;
+        wrongAswer();
+        if( runningQuestionIndex < lastQuestionIndex ){
+            runnningQuestionIndex++;
+            questionRender();
+        }
+    }
+}
+
+
+
 
 
 $("#start").on('click',function(){
     $('.jumbotron').css('display','none');
     
     $('#trivia').css('display','block');
-    renderQuestion();
+    questionRender();
+    setInterval(counterRender,1000);
+    
 })
 
 
