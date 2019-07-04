@@ -23,16 +23,26 @@ var questions = [
         correct: 'California'
     }
 ];
+var lastQuestionIndex = questions.length - 1;
+var runningQuestionIndex = 0;
+var count = 15;
 
 
-
+function renderQuestion(){
+    var q = questions[runningQuestionIndex];
+    $('#question').html('<p>'+q.question+'</p>');
+    $('#A').html(q.choiceA);
+    $('#B').html(q.choiceB);
+    $('#C').html(q.choiceC);
+}
 
 
 
 $("#start").on('click',function(){
     $('.jumbotron').css('display','none');
     
-
+    $('#trivia').css('display','block');
+    renderQuestion();
 })
 
 
