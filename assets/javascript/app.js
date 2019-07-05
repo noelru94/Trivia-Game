@@ -9,7 +9,7 @@ var questions = [
         correct: 'B'
     },
     {
-        question:'How many wholes are there in a full round of golf?' ,
+        question:'How many holes are there in a full round of golf?' ,
         choiceA: 12,
         choiceB: 18,
         choiceC: 9,
@@ -70,5 +70,18 @@ function checkAnswer(answer){
         answerIsWrong();
         wrongScore++;
     }
+}
+function answerIsCorrect(){
+    $('#trivia').css('display','none');
+    $('#message').html('<div id ="correct-answer"> correct </div>');
+    setTimeout(()=>$('#correct-answer').css('display','none'),3000);  
+    setTimeout(nextQuestion,3000)
+}
+
+function answerIsWrong(){
+    $('#trivia').css('display','none');
+    $('#message').html(`<div class ="wrong-answer"> wrong </div> <div class="wrong-answer"> The correct answer is ${questions[runningQuestion].correct}</div>`);
+    setTimeout(()=>$('.wrong-answer').css('display','none'),3000);
+    setTimeout(nextQuestion,3000);
 }
 
