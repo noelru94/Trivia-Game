@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron">
+        <div class=" start jumbotron">
             <h1 class="display-4">Trivia Game</h1>
             <p class="lead">This is a simple trivia game. See how many questions you can guess correctly.</p>
             <hr class="my-4">
@@ -22,13 +22,23 @@
         </div>
 
         <div id="trivia" style="display: none">
+            <div id="question-time">Time remaining: <span id="count">15</span></div>
             <div id="question"><p>  </p></div>
-            <div id="question-time">15</div>
             <div id="choices">
-                <div class="choice" id="A"></div>
-                <div class="choice" id="B"></div>
-                <div class="choice" id="C"></div>
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
             </div>
+        </div>
+        <div id="message"></div>
+        
+        <div id="game-over" class="jumbotron" style='display:none'>
+            <h1 class="display-4">Game Over</h1>
+            <hr class="my-4">
+            <p id="correct-score"></p>
+            <p id="wrong-score"></p>
+              <a id="new-game" class="btn btn-primary btn-lg" href="#" role="button">New Game</a>
+            
         </div>
     </div>
     <script src="assets/javascript/app.js"></script>
