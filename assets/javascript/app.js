@@ -95,3 +95,22 @@ function answerIsWrong(){
     setTimeout(nextQuestion,3000);
 }
 
+function newGame(){
+    $('#game-over').css('display','none');
+    clearInterval(TIMER);
+    correctScore = 0;
+    wrongScore = 0;
+
+$('.start').css('display','block');
+
+$("#start").on('click',function(){
+    $('.start').css('display','none');
+   
+    $('#trivia').css('display','block');
+    TIMER = setInterval(renderCounter,1000);
+    renderQuestion();
+      
+})
+
+}
+
