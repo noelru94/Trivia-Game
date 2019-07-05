@@ -49,8 +49,18 @@ function renderQuestion(){
     $('#C').html(q.choiceC);
 }
 
-
-
+function nextQuestion(){
+    if( runningQuestion < lastQuestion ){
+        runningQuestion++;
+        renderQuestion();
+        $('#trivia').css('display','block')
+    }else{
+        $('#game-over').css('display','block');
+        $('#correct-score').html(`Correct Answers: ${correctScore}`);
+        $('#wrong-score').html(`Wrong Answers: ${wrongScore}`);
+        $('#new-game').on('click',newGame)
+    }
+}
 
 function renderCounter(){
     if( count >= 0 ){
